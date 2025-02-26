@@ -19,7 +19,7 @@
     "friendsofphp/php-cs-fixer": "^2.12"
   },
   "extra": {
-    "contao-manager-plugin": "Clickpress\\ContaoQuicktransitions\\ContaoManager\\Plugin"
+    "contao-manager-plugin": "Clickpress\\ContaoVereinsmanager\\ContaoManager\\Plugin"
   },
   "autoload": {
     "psr-4": {
