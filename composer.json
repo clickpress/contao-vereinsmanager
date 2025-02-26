@@ -1,0 +1,29 @@
+{
+  "name": "clickpress/contao-vereinsmanager",
+  "type": "contao-bundle",
+  "description": "Integration vereinsmanager.org",
+  "homepage":"https://clickpress.de",
+  "license": "LGPL-3.0-or-later",
+  "authors":[
+    {
+      "name":"CLICKPRESS",
+      "homepage":"https://clickpress.de",
+      "role":"Developer"
+    }
+  ],
+  "require":{
+    "contao/core-bundle": "^4.13 || ^5.3"
+  },
+  "require-dev": {
+    "contao/manager-plugin": "^2.0",
+    "friendsofphp/php-cs-fixer": "^2.12"
+  },
+  "extra": {
+    "contao-manager-plugin": "Clickpress\\ContaoQuicktransitions\\ContaoManager\\Plugin"
+  },
+  "autoload": {
+    "psr-4": {
+      "Clickpress\\ContaoVereinsmanager\\": "src/"
+    }
+  }
+}
