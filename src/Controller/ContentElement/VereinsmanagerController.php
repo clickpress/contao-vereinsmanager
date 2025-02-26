@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 
-#[AsContentElement(category: 'texts')]
+#[AsContentElement(category: 'texts', template: 'ce_vereinsmanager', name: 'vereinsmanager')]
 class VereinsmanagerController extends AbstractContentElementController
 {
     public function __construct(
