@@ -1,6 +1,6 @@
 <?php
 
-namespace Clickpress\Vereinsmanager\Controller\ContentElement;
+namespace Clickpress\ContaoVereinsmanager\Controller\ContentElement;
 
 use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
@@ -14,6 +14,8 @@ use Symfony\Component\HttpFoundation\Response;
 #[AsContentElement(category: 'texts', template: 'ce_vereinsmanager', name: 'vereinsmanager')]
 class VereinsmanagerController extends AbstractContentElementController
 {
+    public const TYPE = 'vereinsmanager';
+
     public function __construct(
         readonly RequestStack $requestStack,
         readonly ScopeMatcher $scopeMatcher,
