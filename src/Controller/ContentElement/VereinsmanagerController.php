@@ -24,7 +24,7 @@ class VereinsmanagerController extends AbstractContentElementController
 
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
-        if ($this->scopeMatcher->isBackendRequest()) {
+        if ($this->scopeMatcher->isBackendRequest($request)) {
             return new Response('<em>Einbettung des Wanderportals von vereinsmanager.org</em>');
         }
 
