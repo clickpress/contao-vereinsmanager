@@ -6,7 +6,7 @@ use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
 use Contao\CoreBundle\Routing\ScopeMatcher;
-use Contao\CoreBundle\Twig\FragmentTemplate;
+use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,7 +22,7 @@ class VereinsmanagerController extends AbstractContentElementController
     ) {
     }
 
-    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
+    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
         if ($this->scopeMatcher->isBackendRequest()) {
             return new Response('<em>Einbettung des Wanderportals von vereinsmanager.org</em>');
