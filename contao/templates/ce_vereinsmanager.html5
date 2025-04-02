@@ -4,9 +4,8 @@
 
 <iframe  id="vereinsmanager" src="<?= $this->vereinsmanager_url ?>" style="height:500px; width:100%; border:none;"></iframe>
 <script type="module">
-  import { initialize } from "https://cdn.jsdelivr.net/npm/@open-iframe-resizer/core@latest/dist/index.js";
+  import { initialize } from "/bundles/contaovereinsmanager/iframe-resizer.min.js";
   initialize({}, "#vereinsmanager");
 </script>
-
 <?php $this->endblock(); ?>
 
