@@ -4,7 +4,7 @@ use Clickpress\ContaoVereinsmanager\Controller\ContentElement\VereinsmanagerCont
 
 
 $GLOBALS['TL_DCA']['tl_content']['palettes'][VereinsmanagerController::TYPE] =
-    '{type_legend},type,vereinsmanager_url;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
+    '{type_legend},type,vereinsmanager_url;{template_legend:hide},customTpl;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['vereinsmanager_url'] = [
     'exclude' => true,
@@ -12,8 +12,8 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['vereinsmanager_url'] = [
     'inputType' => 'text',
     'eval' => [
         'rgxp' => 'httpurl',
-        'placeholder'=>'https://meineabteilung.vereinsmanager.org',
-        'mandatory'=>true,
+        'placeholder' => 'https://meineabteilung.vereinsmanager.org',
+        'mandatory' => true,
         'tl_class' => 'w50 clr'
     ],
     'sql' => "varchar(255) NOT NULL default ''"

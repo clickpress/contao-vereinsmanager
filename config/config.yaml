@@ -1,0 +1,13 @@
+nelmio_security:
+  clickjacking:
+    paths:
+      '^/':
+        header: ALLOW
+
+  csp:
+    enforce:
+      frame-ancestors:
+        - 'self'
+        - https://sgv.sgv.vereinsmanager.org
+        - "*.sgv.vereinmanager.org"
+        - "*.vereinmanager.org"

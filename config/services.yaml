@@ -1,8 +1,14 @@
 services:
   _defaults:
-    autowire: true
     autoconfigure: true
 
   Clickpress\ContaoVereinsmanager\:
     resource: ../src
-    exclude: ../src/{ContaoManager,DependencyInjection}
+    exclude: ../src/{ContaoManager,DependencyInjection,ContaoVereinsmanager.php}
+
+  Clickpress\ContaoVereinsmanager\Controller\ContentElement\VereinsmanagerController:
+    arguments:
+      $requestStack: '@request_stack'
+      $scopeMatcher: '@contao.routing.scope_matcher'
+    tags:
+      - { name: 'controller.service_arguments' }
