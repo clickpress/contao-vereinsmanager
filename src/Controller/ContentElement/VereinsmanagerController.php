@@ -5,6 +5,8 @@ namespace Clickpress\ContaoVereinsmanager\Controller\ContentElement;
 use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
+use Contao\CoreBundle\Routing\ResponseContext\Csp\CspHandler;
+use Contao\CoreBundle\Routing\ResponseContext\ResponseContextAccessor;
 use Contao\CoreBundle\Routing\ScopeMatcher;
 use Contao\CoreBundle\Twig\FragmentTemplate;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,6 +21,7 @@ class VereinsmanagerController extends AbstractContentElementController
     public function __construct(
         readonly RequestStack $requestStack,
         readonly ScopeMatcher $scopeMatcher,
+        readonly ResponseContextAccessor $responseContextAccessor
     ) {
     }
 
@@ -26,6 +29,18 @@ class VereinsmanagerController extends AbstractContentElementController
     {
         if ($this->scopeMatcher->isBackendRequest($request)) {
             return new Response('<em>Einbettung des Wanderportals von vereinsmanager.org</em>');
+        }
+
+        $responseContext = $this->responseContextAccessor->getResponseContext();
+        if ($responseContext?->has(CspHandler::class)) {
+            /** @var CspHandler $cspHandler */
+            if (!empty($responseContext)) {
+                $cspHandler = $responseContext->get(CspHandler::class);
+            }
+            $cspHandler
+                ->addSource('script-src', 'https://cdn.jsdelivr.net')
+                ->addSource('frame-src', 'https://*.*.vereinsmanager.org')
+                ->addSource('img-src', 'data:');
         }
 
         return $template->getResponse();

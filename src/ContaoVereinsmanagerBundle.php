@@ -19,6 +19,5 @@ class ContaoVereinsmanagerBundle extends Bundle
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
         $container->import('../config/services.yaml');
-        $container->import('../config/packages/config.yaml');
     }
 }

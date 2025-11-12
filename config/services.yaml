@@ -10,5 +10,6 @@ services:
     arguments:
       $requestStack: '@request_stack'
       $scopeMatcher: '@contao.routing.scope_matcher'
+      $responseContextAccessor: '@contao.routing.response_context_accessor'
     tags:
       - { name: 'controller.service_arguments' }

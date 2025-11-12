@@ -14,9 +14,16 @@
             data-scroll-offset="{{ data.managerOffset }}"
             data-smooth-scroll="{{ data.managerSmoothscroll }}"
             id="vereinsmanager-iframe-1"
-            src="{{ source }}/tourenplan/"
-            style="width: 100%; border: none; min-height: 400px;">
-    </iframe>
+            src="{{ source }}/tourenplan/">
 
-    <script src="{{ data.vereinsmanager_url }}/static/scripts/vm_iframe_resizer.js"></script>
+    </iframe>
+    <style{{ attrs().setIfExists('nonce', csp_nonce('style-src')) }}>
+        #vereinsmanager-iframe-1 {
+            width: 100%;
+            border: none;
+            min-height: 400px;
+        }
+    </style>
+    <script {{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}
+            src="{{ data.vereinsmanager_url }}/static/scripts/vm_iframe_resizer.js"></script>
 {% endblock %}
