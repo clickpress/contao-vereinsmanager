@@ -8,4 +8,4 @@ nelmio_security:
     enforce:
       frame-ancestors:
         - 'self'
-        - "*.vereinmanager.org"
+        - "*.vereinsmanager.org"
