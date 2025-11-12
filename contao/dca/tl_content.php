@@ -32,3 +32,16 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['managerOffset'] = [
     'sql' => "varchar(255) NOT NULL default ''"
 ];
 
+$GLOBALS['TL_DCA']['tl_content']['fields']['managerSmoothscroll'] = [
+    'exclude' => true,
+    'search' => false,
+    'inputType' => 'checkbox',
+    'default' => true,
+    'eval' => [
+        'tl_class' => 'w50 clr'
+    ],
+    'sql' => [
+        'type' => 'boolean',
+        'default' => false,
+    ],
+];
