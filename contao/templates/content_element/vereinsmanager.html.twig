@@ -4,8 +4,9 @@
     .addClass("#{type}")
     .mergeWith(attributes|default) %}
 
+{% set searchable = false %}
+
 {% block content %}
-    <!-- indexer::stop -->
     {% set source = data.vereinsmanager_url %}
     {% do csp_source('frame-src', source) %}
     <iframe
@@ -18,5 +19,4 @@
     </iframe>
 
     <script src="{{ data.vereinsmanager_url }}/static/scripts/vm_iframe_resizer.js"></script>
-    <!-- indexer::continue -->
 {% endblock %}
