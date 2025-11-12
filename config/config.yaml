@@ -8,6 +8,4 @@ nelmio_security:
     enforce:
       frame-ancestors:
         - 'self'
-        - https://sgv.sgv.vereinsmanager.org
-        - "*.sgv.vereinmanager.org"
         - "*.vereinmanager.org"
