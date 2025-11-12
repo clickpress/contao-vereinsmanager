@@ -4,7 +4,7 @@ use Clickpress\ContaoVereinsmanager\Controller\ContentElement\VereinsmanagerCont
 
 
 $GLOBALS['TL_DCA']['tl_content']['palettes'][VereinsmanagerController::TYPE] =
-    '{type_legend},type,vereinsmanager_url;{manager_legend},managerOffset;{template_legend:hide},customTpl;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
+    '{type_legend},type;{manager_legend},vereinsmanager_url,managerOffset,managerSmoothscroll;{template_legend:hide},customTpl;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['vereinsmanager_url'] = [
     'exclude' => true,
@@ -14,7 +14,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['vereinsmanager_url'] = [
         'rgxp' => 'httpurl',
         'placeholder' => 'https://meineabteilung.vereinsmanager.org',
         'mandatory' => true,
-        'tl_class' => 'w50 clr'
+        'tl_class' => 'w50'
     ],
     'sql' => "varchar(255) NOT NULL default ''"
 ];
@@ -27,7 +27,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['managerOffset'] = [
     'eval' => [
         'rgxp' => 'digit',
         'mandatory' => true,
-        'tl_class' => 'w50 clr'
+        'tl_class' => 'w50'
     ],
     'sql' => "varchar(255) NOT NULL default ''"
 ];
@@ -38,7 +38,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['managerSmoothscroll'] = [
     'inputType' => 'checkbox',
     'default' => true,
     'eval' => [
-        'tl_class' => 'w50 clr'
+        'tl_class' => 'cbx'
     ],
     'sql' => [
         'type' => 'boolean',
